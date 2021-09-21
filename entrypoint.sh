@@ -18,7 +18,7 @@ if [ -n "$INPUT_INIT_SCRIPT" ]; then
 fi
 
 mkdir build && cd build || exit
-cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON "$INPUT_CMAKE_ARGS" ..
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON $INPUT_CMAKE_ARGS ..
 
 files_to_check=$(python3 /get_files_to_check.py -exclude="$INPUT_EXCLUDE_DIR" -json="compile_commands.json")
 
